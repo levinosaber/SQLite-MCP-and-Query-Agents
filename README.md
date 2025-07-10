@@ -25,7 +25,8 @@ shanghaichengdi/
 ├── sqlite_operations.py       # SQLite数据库操作逻辑
 ├── test_garbage_monitoring.py # 完整测试套件
 ├── config.py                  # 系统配置
-├── requirements.txt           # Python依赖
+├── requirements.txt           # Python依赖（建议使用下面的uv依赖）
+├── pyprject.toml              # uv 用项目依赖
 ├── README.md                  # 项目说明
 └── data/                      # 数据文件目录
 ```
@@ -33,7 +34,7 @@ shanghaichengdi/
 ## 安装依赖
 
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
 ## 使用方法
@@ -106,6 +107,8 @@ python mcp_server.py [数据库路径]
 - `check_data_quality`: 检查数据质量
 - `get_available_date_range`: 获取数据日期范围
 
+### 4. Agents 使用参考agents目录中的README.md
+
 ## 数据库表结构
 
 系统使用以下SQLite表：
@@ -134,37 +137,3 @@ python mcp_server.py [数据库路径]
 - 数据一致性验证
 - MCP Server集成测试
 - 端到端工作流程测试
-
-## 依赖说明
-
-- **mcp**: Model Context Protocol实现
-- **pandas**: 数据处理（可选，用于扩展功能）
-- **pytest**: 测试框架
-- **pytest-asyncio**: 异步测试支持
-- **sqlite3**: Python内置，无需安装
-
-## 日志
-
-系统日志配置在 `config.py` 中，支持：
-- 控制台输出（INFO级别）
-- 文件记录（DEBUG级别）
-- 详细的调用追踪
-
-## 后续扩展
-
-这个MCP Server为后续的AI Agent系统提供基础：
-- 可以被LangChain/LangGraph调用
-- 支持复杂的垃圾监管分析
-- 可扩展更多数据源和功能
-
-## 技术特点
-
-- 🚀 **高性能**: SQLite内存操作，快速响应
-- 🔒 **可靠性**: 完整的错误处理和日志记录  
-- 🧪 **可测试**: 全面的测试覆盖和模拟数据
-- 🔌 **可扩展**: MCP协议支持，易于集成
-- 📊 **数据完整**: 支持5个核心监管场景
-
----
-
-💡 **提示**: 如需帮助或发现问题，请查看测试输出或日志文件 `garbage_monitoring.log` 
