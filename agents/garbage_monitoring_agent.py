@@ -24,10 +24,10 @@ from pydantic import BaseModel, Field
 from langchain_mcp_adapters.client import MultiServerMCPClient
 
 # === VS Code 调试桥 ===
-import debugpy
-debugpy.listen(("0.0.0.0", 5678))    # 端口随意
-print("Waiting for debugger attach on 5678...")
-debugpy.wait_for_client()            # 先挂起，连上后才继续
+# import debugpy
+# debugpy.listen(("0.0.0.0", 5678))    # 端口随意
+# print("Waiting for debugger attach on 5678...")
+# debugpy.wait_for_client()            # 先挂起，连上后才继续
 # =======================
 
 # 定义结构化输出模型
