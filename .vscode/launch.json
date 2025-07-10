@@ -14,6 +14,12 @@
                 // "-s",
                 "test_garbage_monitoring.py"
             ]
-        }
+        },
+        {
+            "name": "Attach to LangGraph agent",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": { "host": "localhost", "port": 5678 }
+          }          
     ]
 }
