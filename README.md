@@ -106,10 +106,14 @@ python mcp_server.py [数据库路径]
   }
   ```
 
-#### 辅助工具
+#### 通用查询
+- `execute_any_sql_query`：当用户查询输入不符合任何前五种时，会尝试调用这个工具
+
+#### 辅助工具（未测试）
 
 - `check_data_quality`: 检查数据质量
 - `get_available_date_range`: 获取数据日期范围
+
 
 ### 4. Agents 使用参考agents目录中的README.md
 
